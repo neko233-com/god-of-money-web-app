@@ -9,7 +9,7 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: false,
-    minify: 'terser',
+    minify: 'esbuild', // 使用 esbuild 压缩，比 terser 更快
     chunkSizeWarningLimit: 1500,
   },
 })
