@@ -62,18 +62,27 @@ const isActive = (path: string) => {
 .layout {
   display: flex;
   height: 100vh;
+  width: 100vw;
   background: #f5f7fa;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .sidebar {
   width: 250px;
   min-width: 250px;
+  max-width: 250px;
   flex-shrink: 0;
+  flex-grow: 0;
   background: linear-gradient(180deg, #2c3e50 0%, #34495e 100%);
   color: white;
   display: flex;
   flex-direction: column;
   box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  height: 100vh;
+  overflow: hidden;
 }
 
 .logo {
@@ -146,14 +155,17 @@ const isActive = (path: string) => {
 }
 
 .main-content {
-  flex: 1;
-  min-width: 0;
+  width: calc(100vw - 250px);
+  min-width: calc(100vw - 250px);
   max-width: calc(100vw - 250px);
+  height: 100vh;
+  flex-shrink: 0;
+  flex-grow: 0;
   overflow-y: auto;
   overflow-x: hidden;
   padding: 30px;
-  height: 100vh;
   box-sizing: border-box;
+  position: relative;
 }
 
 /* 页面切换动画 */
