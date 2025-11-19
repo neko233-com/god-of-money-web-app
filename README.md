@@ -86,9 +86,11 @@ npm run preview
 
 ### 快速部署
 
-项目已配置 GitHub Actions 自动部署，推送到 `main` 分支即可自动发布。
+项目已配置 GitHub Actions 自动部署，推送到 `main` 分支即可自动构建并发布到 `gh-pages` 分支。
 
-**方式一：使用部署脚本（推荐）**
+**方式一：自动部署（推荐）**
+
+推送代码到 main 分支，GitHub Actions 会自动构建和部署：
 
 Windows:
 ```bash
@@ -101,7 +103,22 @@ chmod +x deploy.sh
 ./deploy.sh "你的提交信息"
 ```
 
-**方式二：手动 Git 命令**
+**方式二：手动部署 dist 目录**
+
+本地构建后直接推送 dist 到 gh-pages 分支：
+
+Windows:
+```bash
+deploy-manual.bat
+```
+
+Linux/Mac:
+```bash
+chmod +x deploy-manual.sh
+./deploy-manual.sh
+```
+
+**方式三：手动 Git 命令**
 
 ```bash
 git add .

@@ -41,6 +41,23 @@ deploy.bat "你的提交信息"
    https://neko233-com.github.io/god-of-money-web-app/
    ```
 
+## 手动部署（可选）
+
+如果你想本地构建后直接推送 dist 目录：
+
+**Windows:**
+```bash
+deploy-manual.bat
+```
+
+**Linux/Mac:**
+```bash
+chmod +x deploy-manual.sh
+./deploy-manual.sh
+```
+
+这会在本地构建项目，然后将 `dist` 目录强制推送到 `gh-pages` 分支。
+
 ## 工作流说明
 
 `.github/workflows/deploy.yml` 配置了自动化部署流程：
@@ -51,9 +68,9 @@ deploy.bat "你的提交信息"
   2. 设置 Node.js 20
   3. 安装依赖 (npm ci)
   4. 构建项目 (npm run build)
-  5. 上传构建产物
 - **部署步骤**：
-  - 将构建产物部署到 GitHub Pages
+  - 将 `dist` 目录推送到 `gh-pages` 分支
+  - GitHub Pages 自动从 `gh-pages` 分支提供静态文件服务
 
 ## 本地测试生产构建
 
