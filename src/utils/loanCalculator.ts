@@ -102,7 +102,7 @@ export function calculateEqualPrincipal(
   }
 
   const totalInterest = totalPayment - principal;
-  const firstMonthPayment = schedule[0].monthlyPayment;
+  const firstMonthPayment = schedule[0]?.monthlyPayment ?? 0;
 
   return {
     monthlyPayment: firstMonthPayment,
