@@ -67,6 +67,8 @@ const isActive = (path: string) => {
 
 .sidebar {
   width: 250px;
+  min-width: 250px;
+  flex-shrink: 0;
   background: linear-gradient(180deg, #2c3e50 0%, #34495e 100%);
   color: white;
   display: flex;
@@ -145,8 +147,11 @@ const isActive = (path: string) => {
 
 .main-content {
   flex: 1;
+  min-width: 0;
   overflow-y: auto;
+  overflow-x: hidden;
   padding: 30px;
+  width: 100%;
 }
 
 /* 页面切换动画 */
@@ -163,5 +168,48 @@ const isActive = (path: string) => {
 .fade-leave-to {
   opacity: 0;
   transform: translateY(-10px);
+}
+
+/* 响应式布局 */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+    min-width: 200px;
+  }
+  
+  .main-content {
+    padding: 20px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .layout {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    min-width: 100%;
+    height: auto;
+    max-height: 200px;
+  }
+  
+  .nav-menu {
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 10px;
+  }
+  
+  .nav-item {
+    flex-direction: column;
+    min-width: 80px;
+    padding: 10px;
+  }
+  
+  .main-content {
+    flex: 1;
+    height: auto;
+    padding: 15px 10px;
+  }
 }
 </style>

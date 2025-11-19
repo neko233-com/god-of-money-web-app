@@ -80,6 +80,37 @@ npm run build
 npm run preview
 ```
 
+## 🚀 在线演示
+
+访问在线版本：[https://neko233-com.github.io/god-of-money-web-app/](https://neko233-com.github.io/god-of-money-web-app/)
+
+### 快速部署
+
+项目已配置 GitHub Actions 自动部署，推送到 `main` 分支即可自动发布。
+
+**方式一：使用部署脚本（推荐）**
+
+Windows:
+```bash
+deploy.bat "你的提交信息"
+```
+
+Linux/Mac:
+```bash
+chmod +x deploy.sh
+./deploy.sh "你的提交信息"
+```
+
+**方式二：手动 Git 命令**
+
+```bash
+git add .
+git commit -m "your commit message"
+git push origin main
+```
+
+详细部署说明见 [DEPLOYMENT.md](./DEPLOYMENT.md)
+
 ## 📖 使用指南
 
 ### 1. 商业贷款计算

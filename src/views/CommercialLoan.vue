@@ -251,8 +251,11 @@ function getProgressColor(ratio: number): string {
 
 <style scoped>
 .page-container {
-  max-width: 1200px;
+  max-width: 1600px;
+  width: 100%;
   margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .page-header {
