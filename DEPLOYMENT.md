@@ -2,7 +2,7 @@
 
 ## 自动部署说明
 
-本项目已配置 GitHub Actions 自动部署工作流。每次推送到 `main` 分支时，会自动构建并部署到 GitHub Pages。
+本项目已配置 GitHub Actions 自动部署工作流。每次推送到 `main` 分支时，会自动构建并将 `dist` 目录推送到 `gh-pages` 分支。
 
 ## 首次部署设置
 
@@ -11,7 +11,9 @@
 1. 进入 GitHub 仓库页面
 2. 点击 `Settings` (设置)
 3. 在左侧菜单中找到 `Pages`
-4. 在 `Source` (来源) 下选择 `GitHub Actions`
+4. 在 `Source` (来源) 下选择 `Deploy from a branch`
+5. 在 `Branch` 下选择 `gh-pages` 分支，目录选择 `/ (root)`
+6. 点击 `Save`
 
 ### 2. 推送代码触发部署
 
@@ -19,6 +21,15 @@
 git add .
 git commit -m "配置 GitHub Pages 自动部署"
 git push origin main
+```
+
+或使用快捷脚本：
+```bash
+# Windows
+deploy.bat "你的提交信息"
+
+# Linux/Mac
+./deploy.sh "你的提交信息"
 ```
 
 ### 3. 查看部署状态
