@@ -1,9 +1,10 @@
 <template>
   <div class="page-container">
-    <div class="page-header">
-      <h1>🏢 商业贷款计算器</h1>
-      <p>专业的商业贷款计算与风险评估工具</p>
-    </div>
+    <div class="content-wrapper">
+      <div class="page-header">
+        <h1>🏢 商业贷款计算器</h1>
+        <p>专业的商业贷款计算与风险评估工具</p>
+      </div>
 
     <el-card class="calculator-card">
       <h2>贷款参数设置</h2>
@@ -166,6 +167,7 @@
       </el-card>
     </div>
   </div>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -251,11 +253,19 @@ function getProgressColor(ratio: number): string {
 
 <style scoped>
 .page-container {
-  max-width: 1600px;
+  max-width: 100%;
   width: 100%;
-  margin: 0 auto;
-  padding: 0 20px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.content-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 30px;
 }
 
 .page-header {

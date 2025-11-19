@@ -1,9 +1,10 @@
 <template>
   <div class="page-container">
-    <div class="page-header">
-      <h1>📊 财务风险评估</h1>
-      <p>全方位评估您的财务健康状况</p>
-    </div>
+    <div class="content-wrapper">
+      <div class="page-header">
+        <h1>📊 财务风险评估</h1>
+        <p>全方位评估您的财务健康状况</p>
+      </div>
 
     <el-card class="input-card">
       <h2>财务状况录入</h2>
@@ -274,6 +275,7 @@
       </el-card>
     </div>
   </div>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -537,11 +539,19 @@ function getSuggestionIcon(index: number) {
 
 <style scoped>
 .page-container {
-  max-width: 1600px;
+  max-width: 100%;
   width: 100%;
-  margin: 0 auto;
-  padding: 0 20px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.content-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 30px;
 }
 
 .page-header {

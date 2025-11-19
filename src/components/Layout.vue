@@ -148,10 +148,12 @@ const isActive = (path: string) => {
 .main-content {
   flex: 1;
   min-width: 0;
+  max-width: calc(100vw - 250px);
   overflow-y: auto;
   overflow-x: hidden;
   padding: 30px;
-  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
 }
 
 /* 页面切换动画 */

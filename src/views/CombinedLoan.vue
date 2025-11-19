@@ -1,9 +1,10 @@
 <template>
   <div class="page-container">
-    <div class="page-header">
-      <h1>🔗 组合贷款计算器</h1>
-      <p>灵活组合商业贷款和公积金贷款</p>
-    </div>
+    <div class="content-wrapper">
+      <div class="page-header">
+        <h1>🔗 组合贷款计算器</h1>
+        <p>灵活组合商业贷款和公积金贷款</p>
+      </div>
 
     <el-alert
       title="组合贷款说明"
@@ -334,6 +335,7 @@
       </div>
     </el-dialog>
   </div>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -496,11 +498,19 @@ function getProgressColor(ratio: number): string {
 
 <style scoped>
 .page-container {
-  max-width: 1600px;
+  max-width: 100%;
   width: 100%;
-  margin: 0 auto;
-  padding: 0 20px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.content-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 30px;
 }
 
 .page-header {
